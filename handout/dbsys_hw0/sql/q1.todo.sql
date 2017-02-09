@@ -4,5 +4,9 @@
 -- Order by: by quantity returned, descending.
 
 -- Student SQL code here:
-
+SELECT p_partkey, p_name, LINEITEM.l_quantity
+FROM PART 
+WHERE p_partkey = LINEITEM.l_partkey
+ORDER BY LINEITEM.l_quantity DESC
+LIMIT 10;
 

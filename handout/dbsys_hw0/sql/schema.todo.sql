@@ -16,8 +16,15 @@ drop table if exists region;
 -- Students should fill in the followins statements:
 
 create table part (
-
-);
+  p_partkey int,
+  p_name text,
+  p_mfgr text,
+  p_brand text,
+  p_type text,
+  p_size int,
+  p_container text,
+  p_retailprice real,
+  p_comment text;
 
 create table supplier (
 

@@ -25,7 +25,7 @@ create table part (
   p_container text,
   p_retailprice real,
   p_comment text
-};
+);
 
 create table supplier (
   s_suppkey int,

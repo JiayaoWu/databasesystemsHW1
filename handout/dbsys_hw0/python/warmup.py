@@ -16,8 +16,11 @@ class Lineitem(object):
   # Feel free to use __new__ instead.
   # (e.g., if you decide to inherit from an immutable class).
   def __init__(self, *args):
-    pass 
-
+   # pass
+    if (args[0]).isdigit():
+        self.l_orderkey = int(args[0])
+    else:
+        raise ValueError('orderkey in Lineitem is not an integer')
   # Pack this lineitem object into a bytes object.
   def pack(self):
     raise NotImplementedError()
@@ -33,7 +36,7 @@ class Lineitem(object):
   def byteSize(cls):
     return struct.calcsize(cls.fmt)
 
-    
+
 class Orders(object):
   # The format string, for use with the struct module.
   fmt = ""
@@ -43,7 +46,10 @@ class Orders(object):
   # Feel free to use __new__ instead.
   # (e.g., if you decide to inherit from an immutable class).
   def __init__(self, *args):
-    pass 
+    if (args[0]).isdigit():
+        self.o_orderkey = int(args[0])
+    else:
+        raise ValueError('orderkey in Lineitem is not an integer')
 
   # Pack this orders object into a bytes object.
   def pack(self):
@@ -53,7 +59,7 @@ class Orders(object):
   @classmethod
   def unpack(cls, byts):
     raise NotImplementedError()
-  
+
   # Return the size of the packed representation.
   # Do not change.
   @classmethod
